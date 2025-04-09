@@ -67,7 +67,7 @@ heroes.forEach((value,index)=>{
 let card = document.createElement("div")
 card.classList.add("card")
 let img = document.createElement("img")
-img.src = `./assets/logo.png`
+img.src = `/assets/logo.png`
 card.appendChild(img)
 card.dataset.info = value.power
 card.dataset.img = value.img
