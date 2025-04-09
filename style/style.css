@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body{
+    background: black;
+    color: white;
+}
+
+.game-menu{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    animation: fadeIn 5s 1;
+    & img{
+        width: 300px;
+    }
+}
+
+#start{
+    text-transform: uppercase;
+    animation: blink 3s infinite linear;
+}
+
+
+
+.game-display{
+    display:none;
+    height: 100vh;
+    align-items: center;
+}
+
+.card{
+    width: 220px;
+    height: 250px;
+    border-radius: 30px;
+    position: relative;
+    background: linear-gradient(120deg,rgb(26,26,26),black);
+    border-top: 2px solid rgb(26,26,26);
+    transition: all .2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img{
+        width: 150px;
+    }
+
+    &:hover{
+        box-shadow: 0px 5px 15px gray;
+        cursor: pointer;
+
+    }
+}
+
+.card-container{
+    margin: 0 auto;
+    display: flex;
+    width: 700px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.card-img{
+    width: 200px !important;
+}
+
+.card:nth-child(1){
+    transform: rotate(-15deg);
+}
+.card:nth-child(2){
+    transform: rotate(-10deg);
+}
+.card:nth-child(3){
+    transform: rotate(10deg);
+}
+
+.card:nth-child(4){
+    transform: rotate(15deg);
+}
+
+.matched{
+    box-shadow: 0px 0px 5px rgb(95, 160, 120);
+}
+
+.game-versus-mode{
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column ;
+    gap: 40px;
+    animation: fadeIn 5s 1;
+}
+.game-mode{
+    background: url(../img/bg.jpg);
+    background-size: 110%;
+    background-position: center;
+    filter: brightness(0.8);
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 50px;
+    animation: fadeIn 5s 1;
+    & button{
+        height: 70px;
+        width: 300px;
+        font-size: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        background: rgb(0, 0, 0);
+        font-weight:bold ;
+        backdrop-filter: blur(10px);
+        text-transform:uppercase ;
+        border: none;
+        
+        &:hover{
+            background: white;
+            color: black;
+            cursor: pointer;
+        }
+        
+    }
+
+
+}
+
+
+
+#player-1{
+    position: fixed;
+    bottom: 0;
+    left: calc(50% - 440px);
+    display: flex;
+}
+
+#player-2{
+    position: fixed;
+    top: 0;
+    left: calc(50% - 440px);
+    display: flex;
+}
+
+.card-power{
+    position: absolute;
+    left: 40%;
+    bottom: 5%;
+}
+
+.versus{
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: orangered;
+}
+
+.active{
+    display: flex;
+}
+
+.choised{
+    box-shadow: 0px 0px 5px red;
+    animation: blink 2s infinite linear;
+    transform: scale(1.1) !important;
+    transition: all .5s ease;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
+
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }50%{
+        opacity: 1;
+    }100%{
+        opacity: 0;
+    }
+}
