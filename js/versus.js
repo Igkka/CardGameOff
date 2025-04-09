@@ -51,8 +51,8 @@ let player2Cards = []
 let hero1Hp = 4
 let hero2Hp = 4
 let musicPack = {
-    flipcard:"../sound/flipcard.mp3",
-    win:"../sound/win.mp3",
+    flipcard:"./sound/flipcard.mp3",
+    win:"./sound/win.mp3",
 }
 
 let flipcard = new Audio(musicPack.flipcard)
@@ -67,7 +67,7 @@ heroes.forEach((value,index)=>{
 let card = document.createElement("div")
 card.classList.add("card")
 let img = document.createElement("img")
-img.src = `../assets/logo.png`
+img.src = `./assets/logo.png`
 card.appendChild(img)
 card.dataset.info = value.power
 card.dataset.img = value.img
@@ -118,12 +118,12 @@ function runVersus(){
     if(card1.dataset.info > card2.dataset.info){
        player2Cards = player2Cards.filter(card=>card !== card2)
         card2.remove()
-        card1.innerHTML =`<img src="../assets/logo.png" alt="">`
+        card1.innerHTML =`<img src="./assets/logo.png" alt="">`
         hero2Hp--
     }else{
         player1Cards = player1Cards.filter(card=>card !== card1)
         card1.remove()
-        card2.innerHTML =`<img src="../assets/logo.png" alt="">`
+        card2.innerHTML =`<img src="./assets/logo.png" alt="">`
         hero1Hp--
     }
     console.log(
